@@ -1,0 +1,28 @@
+{
+  "name": "pet_grooming",
+  "version": "1.0.0",
+  "description": "pet grooming appointment system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "pet",
+    "grooming",
+    "koa",
+    "nodejs",
+    "full_stack"
+  ],
+  "author": "Jason",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-nunjucks-2": "^3.0.2",
+    "koa-router": "^7.4.0",
+    "koa-static": "^4.0.2",
+    "log4js": "^2.4.1",
+    "mongoose": "^5.0.17"
+  },
+  "devDependencies": {}
+}
