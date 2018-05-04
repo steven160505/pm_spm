@@ -1,6 +1,6 @@
 const router = require('koa-router')();
 const fs = require('fs')
-// const HomeController = require('../controller/home');
+const userInfoController = require('../controller/api/user.js');
 module.exports = (app) => {
 
 router.get('/', async(ctx, next) => {
@@ -37,7 +37,8 @@ router.get('/services', async(ctx, next) =>{
   ctx.response.body = htmlFile
 })
 
-// router.post('/user/register', HomeController.register)
+router.post('/user/register', userInfoController.signUp)
+router.post('/user/signin', userInfoController.signIn)
 
 app.use(router.routes())
    .use(router.allowedMethods())

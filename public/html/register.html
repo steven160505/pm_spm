@@ -1,71 +1,26 @@
-<!doctype html>
-<html>
-
 <head>
-    <meta charset="UTF-8">
-    <title>register</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User register</title>
+    <!-- <link rel="stylesheet" href="css/normalize.css"> -->
+    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" type="text/css" href="css/register.css">
 </head>
 
 <body>
-    <nav>
-        <div align="right"><a href="/register">register</a> <a href="/login">login</a> <a href="/services">services</a> <a href="#">appointment</a></div>
-    </nav>
-    <h1><div align="center"> <font color="#21DFE0">Now, you will be a member.</font></div></h1>
-    <div align="center">
-        <tr>
-            <td width="126">name</td>
-            <td width="196">
-                <p>
-                    <input type="text" name="fname"></input>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>address</td>
-            <td>
-                <p>
-                    <input type="text" name="address"></input>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>mobile phone</td>
-            <td>
-                <p>
-                    <input type="text" name="mobile"></input>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td>home phone</td>
-            <td>
-                <p>
-                    <input type="text" name="phone"></input>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <td height="24">work phone</td>
-            <td>
-                <p>
-                    <input type="text" name="fname"></input>
-                </p>
-            </td>
-        </tr>
-        <tr>
-            <a href="dog.html">
-                <td height="24">your dogs</td>
-            </a>
-            <td>
-                <p>
-                    <input type="text" name="fname"></input>
-                </p>
-            </td>
-        </tr>
-    </div>
-    <div align="center">
-        <input type="submit" name="botton1" id="bt1" value="submit" class="bt1">
-    </div>
+    <form action="/user/register" method="post">
+        <h1>Register</h1>
+        <fieldset>
+            <label for="name">UserName:</label>
+            <input type="text" id="name" name="username">
+            <label for="mail">Email:</label>
+            <input type="email" id="mail" name="email">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+        </fieldset>
+        <button type="submit">Create your account</button>
+    </form>
 </body>
 
 </html>
