@@ -2,3 +2,4 @@
 .DS_Store
 #过滤文件夹
 node_modules/
+bower_components/
