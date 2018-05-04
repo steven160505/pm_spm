@@ -10,7 +10,20 @@ const app = new Koa()
 const fs = require('fs')
 const router = require('./router/router')
 const mongoose = require('mongoose')
-const config = require('./config/config');
+const session=require('koa-session')
+
+const config = require('./config/config')
+
+app.keys = ['pet gooming spm'];//加密匙
+
+app.use(session({
+  key: 'pet gooming:sess',
+  maxAge: 7200000, /** (number) maxAge in ms (default is 1 days)，cookie的过期时间，这里表示2个小时 */
+  overwrite: true, /** (boolean) can overwrite or not (default true) */
+  httpOnly: true, /** (boolean) httpOnly or not (default true) */
+  signed: true, /** (boolean) signed or not (default true) */
+},app));
+
 app.use(bodyParser())
 // 配置静态资源加载中间件
 app.use(convert(koaStatic(

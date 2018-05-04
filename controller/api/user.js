@@ -1,7 +1,7 @@
 /**
  * Created by linyuhua on 2017/5/17.
  */
-const User = require('../schemas/user');
+const User   = require('../schemas/user');
 
 module.exports = {
     async signUp (ctx) {
@@ -62,11 +62,24 @@ module.exports = {
             } else {
                 //判断密码是否正确
                 if (password === user.password) {
-                    ctx.body = {success: true, message: '登入成功'}
+                    // ctx.body = {success: true, message: '登入成功'}
+                    // 设置session
+                    let session = ctx.session
+                        session.isLogin = true
+                        session.userName = user.username
+                        session.userId = user._id
+                    ctx.redirect('/services')
                 } else {
                     ctx.body = {success: false, message: '密码错误'}
                 }
             }
         })
+    },
+    async logOut (ctx) {
+        let session = ctx.session
+        session.isLogin = false
+        session.userName = ''
+        session.userId = ''
+        ctx.redirect('/login')
     }
 }
