@@ -63,6 +63,13 @@ git init
 git pull https://github.com/steven160505/pm_spm.git
 ```
 
+## 安装工具包
+
+进入项目目录，运行
+
+```bash
+npm install
+```
 ## 启动
 
 ```bash 
