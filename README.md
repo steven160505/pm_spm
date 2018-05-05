@@ -56,6 +56,13 @@ brew services list
 brew services start mongodb
 ```
 
+## 下载
+
+```bash
+git init
+git pull https://github.com/steven160505/pm_spm.git
+```
+
 ## 启动
 
 ```bash 
