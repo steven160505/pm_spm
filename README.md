@@ -56,7 +56,7 @@ brew services list
 brew services start mongodb
 ```
 
-## 下载
+## 下载项目
 
 ```bash
 git init
@@ -74,5 +74,12 @@ npm install
 
 ```bash 
 node app.js
+```
+
+## 访问
+打开浏览器，访问
+
+```
+http://localhost:8080
 ```
 
