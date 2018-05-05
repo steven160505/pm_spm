@@ -50,6 +50,18 @@ router.get('/services', async(ctx, next) =>{
   }
 })
 
+
+router.get('/user/profile', async(ctx, next) =>{
+
+  if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
+    let htmlFile = fs.readFileSync('public/html/user_profile.html')
+    ctx.response.type = 'html'
+    ctx.response.body = htmlFile
+  }else{
+    ctx.redirect('/login')
+  }
+})
+
 router.post('/user/register', userInfoController.signUp)
 router.post('/user/signin', userInfoController.signIn)
 router.get('/user/logout', userInfoController.logOut)
