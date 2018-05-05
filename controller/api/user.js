@@ -33,7 +33,8 @@ module.exports = {
 
                 const doc = await newUser.save();
                 if (!doc.errors) {
-                    ctx.body = {success: true, message: '注册成功'}
+                    ctx.redirect('/')
+                    // ctx.body = {success: true, message: '注册成功'}
                 } else {
                     ctx.body = result;
                 }
@@ -68,7 +69,7 @@ module.exports = {
                         session.isLogin = true
                         session.userName = user.username
                         session.userId = user._id
-                    ctx.redirect('/services')
+                    ctx.redirect('/')
                 } else {
                     ctx.body = {success: false, message: '密码错误'}
                 }
