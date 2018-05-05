@@ -6,7 +6,7 @@ module.exports = (app) => {
 
 router.get('/', async(ctx, next) => {
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/dog_grooming.html')
+    let htmlFile = fs.readFileSync('public/html/index.html')
     ctx.response.type = 'html'
     ctx.response.body = htmlFile
   }else{
