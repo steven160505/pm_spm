@@ -9,8 +9,8 @@ class BaseController {
 
     /**
       @param model Mongoose model
-      @param key primary key of the model that will be used for searching, removing
-      and reading
+      @param key primary key of the model that will be used for
+      searching, removing and reading
     */
     constructor(model, key) {
         this.model = model;
@@ -45,6 +45,26 @@ class BaseController {
             .then((modelInstance) => {
                 return modelInstance;
             });
+    }
+
+
+    /**
+     * 根据条件查询记录
+     * @return {Object} 数据库中记录
+     */
+    find(data = {}, fields = null, options = {}) {
+        return new Promise((resolve, reject) => {
+            //model.find(需要查找的对象(如果为空，则查找到所有数据)
+            //属性过滤对象[可选参数]
+            //options[可选参数], callback)
+            UserModel.find(data, fields, options, (error, doc) => {
+                if (error) {
+                    reject(error)
+                } else {
+                    resolve(doc)
+                }
+            })
+        })
     }
 
     /**
