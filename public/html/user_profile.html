@@ -27,7 +27,7 @@
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="orange" id="wizardProfile">
-                            <form action="" method="">
+                            <form action="/user/profile" method="post">
                                 <!--        You can switch ' data-color="orange" '  with one of the next bright colors: "blue", "green", "orange", "red"          -->
                                 <div class="wizard-header">
                                     <h3>
@@ -85,19 +85,19 @@
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Street Name</label>
-                                                    <input type="text" class="form-control" placeholder="5h Avenue">
+                                                    <input name="streetname" type="text" class="form-control" placeholder="5h Avenue">
                                                 </div>
                                             </div>
                                             <div class="col-sm-3">
                                                 <div class="form-group">
                                                     <label>Street Number</label>
-                                                    <input type="text" class="form-control" placeholder="242">
+                                                    <input name="streetnumber" type="text" class="form-control" placeholder="242">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>City</label>
-                                                    <input type="text" class="form-control" placeholder="New York...">
+                                                    <input name="city" type="text" class="form-control" placeholder="New York...">
                                                 </div>
                                             </div>
                                         </div>
@@ -108,19 +108,19 @@
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Name</label>
-                                                    <input type="text" class="form-control" placeholder="your dog name">
+                                                    <input name="dogname" type="text" class="form-control" placeholder="your dog name">
                                                 </div>
                                             </div>
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Breed</label>
-                                                    <input type="text" class="form-control" placeholder="your dog breed">
+                                                    <input name="dogbreed" type="text" class="form-control" placeholder="your dog breed">
                                                 </div>
                                             </div>
                                             <div class="col-sm-7 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Date of birth</label>
-                                                    <input type="text" class="form-control form_datetime" placeholder="2018-04-20">
+                                                    <input name="dog_birth_date" type="text" class="form-control form_datetime" placeholder="2018-04-20">
                                                 </div>
                                             </div>
                                         </div>
@@ -129,7 +129,8 @@
                                 <div class="wizard-footer height-wizard">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-warning btn-wd btn-sm' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' />
+                                        <!-- <input type='button' class='btn btn-finish btn-fill btn-warning btn-wd btn-sm' name='finish' value='Finish' /> -->
+                                        <button type="submit" class='btn btn-finish btn-fill btn-warning btn-wd btn-sm'>Finish</button>
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-fill btn-default btn-wd btn-sm' name='previous' value='Previous' />

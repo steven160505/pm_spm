@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../img/apple-icon.png" />
+    <link rel="icon" type="image/png" href="../img/favicon.png" />
+    <title>Paper Bootstrap Wizard by Creative Tim</title>
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <meta name="viewport" content="width=device-width" />
+    <!-- CSS Files -->
+    <link href="../css/bootstrap.min.v30.css" rel="stylesheet" />
+    <link href="../css/paper-bootstrap-wizard.css" rel="stylesheet" />
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <!-- Fonts and Icons -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
+    <link href="../css/themify-icons.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap-datetimepicker.css">
+</head>
+
+<body>
+    <div class="image-container set-full-height" style="background-image: url('../img/paper-2.jpeg')">
+        <!--   Big container   -->
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2">
+                    <!--      Wizard container        -->
+                    <div class="wizard-container">
+                        <div class="card wizard-card" data-color="green" id="wizard">
+                            <form action="" method="">
+                                <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
+                                <div class="wizard-header">
+                                    <h3 class="wizard-title">Services Detaill</h3>
+                                </div>
+                                <div class="wizard-navigation">
+                                    <div class="progress-with-circle">
+                                        <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="4" style="width: 15%;"></div>
+                                    </div>
+                                    <ul>
+                                        <li>
+                                            <a href="#location" data-toggle="tab">
+                                                <div class="icon-circle">
+                                                    <i class="ti-map"></i>
+                                                </div>
+                                                Location
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#type" data-toggle="tab">
+                                                <div class="icon-circle">
+                                                    <i class="ti-home"></i>
+                                                </div>
+                                                Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#facilities" data-toggle="tab">
+                                                <div class="icon-circle">
+                                                    <i class="ti-timer"></i>
+                                                </div>
+                                                Time
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#description" data-toggle="tab">
+                                                <div class="icon-circle">
+                                                    <i class="ti-comments"></i>
+                                                </div>
+                                                Special requirements
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="tab-content">
+                                    <div class="tab-pane" id="location">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <h5 class="info-text"> Where is the service address？</h5>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Adress</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Which street your place located?">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label>Surburb</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="What is your place street number?">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="type">
+                                        <h5 class="info-text">Which kind of service do you want? </h5>
+                                        <div class="row">
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Dog breed</label>
+                                                    <select class="form-control">
+                                                        <option disabled="" selected="">- breed -</option>
+                                                        <option>Labrador Retriever</option>
+                                                        <option>German Shepherd</option>
+                                                        <option>Golden Retriever</option>
+                                                        <option>French Bulldog</option>
+                                                        <option>Bulldog</option>
+                                                        <option>Beagle</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-5">
+                                                <div class="form-group">
+                                                    <label>Grooming options</label>
+                                                    <select class="form-control">
+                                                        <option disabled="" selected="">- services -</option>
+                                                        <option>wash only</option>
+                                                        <option>wash & nail clipping</option>
+                                                        <option>deluxe grooming</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="facilities">
+                                        <h5 class="info-text">Tell us more when to groom your dog . </h5>
+                                        <div class="row">
+                                            <div class="col-sm-5 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Date</label>
+                                                    <div class="input-group date" id="datetimepicker1">
+                                                        <input type="text" class="form-control" placeholder="date">
+                                                        <span class="input-group-addon">
+                                                            <span class="fa fa-calendar"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="description">
+                                        <div class="row">
+                                            <h5 class="info-text"> Drop us special instructions </h5>
+                                            <div class="col-sm-6 col-sm-offset-1">
+                                                <div class="form-group">
+                                                    <label>Place instruction</label>
+                                                    <textarea class="form-control" placeholder="" rows="9"></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group">
+                                                    <label>Example</label>
+                                                    <p class="description">"Watch out during washing, my dog doesn't like water."</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wizard-footer">
+                                    <div class="pull-right">
+                                        <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
+                                        <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+                                    </div>
+                                    <div class="pull-left">
+                                        <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- wizard container -->
+                </div>
+            </div>
+            <!-- row -->
+        </div>
+        <!--  big container -->
+    </div>
+</body>
+<!--   Core JS Files   -->
+<script type="text/javascript" src="../js/moment.min.js"></script>
+<script src="../js/jquery-2.2.4.min.js" type="text/javascript"></script>
+
+
+<script src="../js/bootstrap.v30.min.js" type="text/javascript"></script>
+<script src="../js/jquery.bootstrap.wizard.js" type="text/javascript"></script>
+<!--  Plugin for the Wizard -->
+<script src="../js/paper-bootstrap-wizard.js" type="text/javascript"></script>
+<!--  More information about jquery.validate here: http://jqueryvalidation.org/  -->
+<script src="../js/jquery.validate.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="../js/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript">
+$(function() {
+    $('#datetimepicker1').datetimepicker();
+    $('#datetimepicker2').datetimepicker({
+        locale: 'ru'
+    });
+});
+</script>
+
+</html>
