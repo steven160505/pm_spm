@@ -14,6 +14,8 @@ const session=require('koa-session')
 
 const config = require('./config/config')
 
+const koaNunjucks = require('koa-nunjucks-2')
+
 app.keys = ['pet gooming spm'];//加密匙
 
 app.use(session({
@@ -29,6 +31,19 @@ app.use(bodyParser())
 app.use(convert(koaStatic(
     path.join(__dirname , 'public')
 )))
+
+
+// 设置nunjuncks
+app.use(koaNunjucks({
+  ext: 'html',
+  path: path.join(__dirname, 'views'),
+  configureEnvironment: (env) => {
+    env.addFilter('shorten', (str, count) => {
+      return str.slice(0, count || 5);
+    });
+  }
+}));
+
 
 // 链接数据库
 mongoose.Promise = global.Promise;

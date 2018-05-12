@@ -1,0 +1,32 @@
+{
+  "name": "pet_grooming",
+  "description": "pet grooming appointment system",
+  "main": "app.js",
+  "authors": [
+    "Jason"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "pet",
+    "grooming",
+    "koa",
+    "nodejs",
+    "full_stack"
+  ],
+  "homepage": "https://github.com/steven160505/pm_spm",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^4.1.1",
+    "eonasdan-bootstrap-datetimepicker": "^4.17.47",
+    "fontawesome": "^5.0.12",
+    "jquery": "^3.3.1",
+    "moment": "^2.22.1"
+  }
+}

@@ -29,10 +29,11 @@
                     <!--      Wizard container        -->
                     <div class="wizard-container">
                         <div class="card wizard-card" data-color="green" id="wizard">
-                            <form action="" method="">
+                            <form action="/services" method="post">
                                 <!--        You can switch " data-color="green" "  with one of the next bright colors: "blue", "azure", "orange", "red"       -->
                                 <div class="wizard-header">
                                     <h3 class="wizard-title">Services Detaill</h3>
+                                    <p class="category">This information will let us know more about your requirements.&nbsp;&nbsp;<a href="/">cancel</a></p>
                                 </div>
                                 <div class="wizard-navigation">
                                     <div class="progress-with-circle">
@@ -53,6 +54,14 @@
                                                     <i class="ti-home"></i>
                                                 </div>
                                                 Services
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#supply" data-toggle="tab">
+                                                <div class="icon-circle">
+                                                    <i class="ti-face-smile"></i>
+                                                </div>
+                                                Supply
                                             </a>
                                         </li>
                                         <li>
@@ -81,20 +90,20 @@
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
-                                                    <label>Adress</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Which street your place located?">
+                                                    <label>Address</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Which street your place located?" name="address">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group">
                                                     <label>Surburb</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="What is your place street number?">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="What is your place street number?" name="surburb">
                                                 </div>
                                             </div>
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>City</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?">
+                                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Where is your place located?" name="city">
                                                 </div>
                                             </div>
                                         </div>
@@ -105,25 +114,25 @@
                                             <div class="col-sm-5 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Dog breed</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="dog_breed">
                                                         <option disabled="" selected="">- breed -</option>
-                                                        <option>Labrador Retriever</option>
-                                                        <option>German Shepherd</option>
-                                                        <option>Golden Retriever</option>
-                                                        <option>French Bulldog</option>
-                                                        <option>Bulldog</option>
-                                                        <option>Beagle</option>
+                                                        <option value="Labrador Retriever">Labrador Retriever</option>
+                                                        <option value="German Shepherd">German Shepherd</option>
+                                                        <option value="Golden Retriever">Golden Retriever</option>
+                                                        <option value="French Bulldog">French Bulldog</option>
+                                                        <option value="Bulldog">Bulldog</option>
+                                                        <option value="Beagle">Beagle</option>
                                                     </select>
                                                 </div>
                                             </div>
                                             <div class="col-sm-5">
                                                 <div class="form-group">
                                                     <label>Grooming options</label>
-                                                    <select class="form-control">
+                                                    <select class="form-control" name="grooming_option">
                                                         <option disabled="" selected="">- services -</option>
-                                                        <option>wash only</option>
-                                                        <option>wash & nail clipping</option>
-                                                        <option>deluxe grooming</option>
+                                                        <option value="wash only">wash only</option>
+                                                        <option value="wash & nail clipping">wash & nail clipping</option>
+                                                        <option value="deluxe grooming">deluxe grooming</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -136,10 +145,35 @@
                                                 <div class="form-group">
                                                     <label>Date</label>
                                                     <div class="input-group date" id="datetimepicker1">
-                                                        <input type="text" class="form-control" placeholder="date">
+                                                        <input type="text" class="form-control" placeholder="date" name="date">
                                                         <span class="input-group-addon">
                                                             <span class="fa fa-calendar"></span>
                                                         </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="tab-pane" id="supply">
+                                        <h5 class="info-text">Would you supply water and electricity for us? </h5>
+                                        <div class="row">
+                                            <div class="col-sm-8 col-sm-offset-2">
+                                                <div class="col-sm-4 col-sm-offset-2">
+                                                    <div class="choice" data-toggle="wizard-checkbox">
+                                                        <input type="checkbox" name="water" value="yes">
+                                                        <div class="card card-checkboxes card-hover-effect">
+                                                            <i class="fa fa-tint"></i>
+                                                            <p>Water</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="choice" data-toggle="wizard-checkbox">
+                                                        <input type="checkbox" name="electricity" value="yes">
+                                                        <div class="card card-checkboxes card-hover-effect">
+                                                            <i class="fa fa-bolt"></i>
+                                                            <p>Electricity</p>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -151,7 +185,7 @@
                                             <div class="col-sm-6 col-sm-offset-1">
                                                 <div class="form-group">
                                                     <label>Place instruction</label>
-                                                    <textarea class="form-control" placeholder="" rows="9"></textarea>
+                                                    <textarea class="form-control" placeholder="" rows="9" name="requirements"></textarea>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
@@ -166,7 +200,8 @@
                                 <div class="wizard-footer">
                                     <div class="pull-right">
                                         <input type='button' class='btn btn-next btn-fill btn-success btn-wd' name='next' value='Next' />
-                                        <input type='button' class='btn btn-finish btn-fill btn-success btn-wd' name='finish' value='Finish' />
+                                        <input type='submit' class='btn btn-finish btn-fill btn-success btn-wd' value='Finish' />
+                                        <!-- <button type="submit">Sign In</button> -->
                                     </div>
                                     <div class="pull-left">
                                         <input type='button' class='btn btn-previous btn-default btn-wd' name='previous' value='Previous' />

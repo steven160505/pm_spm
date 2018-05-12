@@ -30,6 +30,7 @@ router.get('/register', async(ctx, next) =>{
 
 
 router.get('/dog', async(ctx, next) =>{
+  console.log('session id: ',ctx.session.userId)
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
     let htmlFile = fs.readFileSync('public/html/dog.html')
     ctx.response.type = 'html'
@@ -42,12 +43,16 @@ router.get('/dog', async(ctx, next) =>{
 router.get('/services', async(ctx, next) =>{
 
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/services.html')
+    let htmlFile = fs.readFileSync('public/html/appointment.html')
     ctx.response.type = 'html'
     ctx.response.body = htmlFile
   }else{
     ctx.redirect('/login')
   }
+})
+
+router.post('/services', async(ctx, next) =>{
+  console.log('data: ',ctx.request.body)
 })
 
 
@@ -61,6 +66,8 @@ router.get('/user/profile', async(ctx, next) =>{
     ctx.redirect('/login')
   }
 })
+
+router.post('/user/profile', userInfoController.editUserInfo)
 
 router.post('/user/register', userInfoController.signUp)
 router.post('/user/signin', userInfoController.signIn)
