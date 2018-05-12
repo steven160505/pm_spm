@@ -78,7 +78,7 @@ router.get('/user/logout', userInfoController.logOut)
 router.get('/userCenter/appointment/list', async(ctx, next) =>{
 
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/table_list.html')
+    let htmlFile = fs.readFileSync('public/html/userCenter/table_list.html')
     ctx.response.type = 'html'
     ctx.response.body = htmlFile
   }else{

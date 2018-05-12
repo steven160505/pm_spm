@@ -5,14 +5,14 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>user center</title>
-    <link rel="stylesheet" href="../..//css/page/userCenter/amazeui.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/amazeui.css" />
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../..//css/page/userCenter/core.css" />
-    <link rel="stylesheet" href="../..//css/page/userCenter/menu.css" />
-    <link rel="stylesheet" href="../..//css/page/userCenter/index.css" />
-    <link rel="stylesheet" href="../..//css/page/userCenter/admin.css" />
-    <link rel="stylesheet" href="../..//css/page/userCenter/typography.css" />
-    <link rel="stylesheet" href="../..//css/page/userCenter/form.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/core.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/menu.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/index.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/admin.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/typography.css" />
+    <link rel="stylesheet" href="../../css/page/userCenter/form.css" />
     <style type="text/css" media="screen">
         .am-form textarea{
             width: 75%;
@@ -41,10 +41,10 @@
                 <!-- User -->
                 <div class="user-box am-hide-sm-only">
                     <div class="user-img">
-                        <img src="../..//img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        <img src="../../img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
                     </div>
-                    <h5><a href="#">Jason Wang</a> </h5>
+                    <h5><a href="#">Jack Ma</a> </h5>
                     <ul class="list-inline">
                         <li>
                             <a href="#"><i class="am-icon-cog" aria-hidden="true"></i></a>
@@ -61,16 +61,12 @@
                     <li><a href="/"><span class="am-icon-home"></span>&nbsp;home</a></li>
                     <li class="admin-parent">
                         <a class="am-cf" data-am-collapse="{target: '#collapse-nav5'}"><span class="am-icon-file"></span>&nbsp;user profiles<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
-                        <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav5">
-                            <li><a href="form_basic.html" class="am-cf">user</a></li>
-                            <li><a href="form_validate.html">表单验证</a></li>
-                        </ul>
                     </li>
                     <li class="admin-parent">
-                        <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span>&nbsp;Appointment<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
+                        <a class="am-cf" data-am-collapse="{target: '#collapse-nav1'}"><span class="am-icon-table"></span>&nbsp;Appointments<span class="am-icon-angle-right am-fr am-margin-right"></span></a>
                         <ul class="am-list am-collapse admin-sidebar-sub am-in" id="collapse-nav1">
-                            <li><a href="table_complete.html">Appointment lists</a></li>
-                            <li><a href="table_complete.html">Appointment detail</a></li>
+                            <li><a href="/userCenter/appointment/list">Appointment lists</a></li>
+                            <li><a href="/userCenter/appointment/detail">Appointment detail</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -104,51 +100,46 @@
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Surburb</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Enter your surburb">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">City</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Enter your city">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
-                                                <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">City</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Date</label>
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Select a date for service">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Dog breed</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Enter your dog breed ">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Grooming options</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Choose grooming options">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Water supply</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply water？Yes,or No.">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Electricity supply</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
+                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply electricity？Yes,or No.">
                                             </div>
                                         </div>
-                                        <div class="am-form-group">
-                                            <div class="am-g">
-                                                <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Time</label>
-                                                <input class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="输入电子邮件">
-                                            </div>
-                                        </div>
+                                        
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-10">Requirements</label>
@@ -172,10 +163,10 @@
     </div>
     <!-- navbar -->
     <a href="admin-offcanvas" class="am-icon-btn am-icon-th-list am-show-sm-only admin-menu" data-am-offcanvas="{target: '#admin-offcanvas'}"><!--<i class="fa fa-bars" aria-hidden="true"></i>--></a>
-    <script type="text/javascript" src="../..//js/page/userCenter/jquery-2.1.0.js"></script>
-    <script type="text/javascript" src="../..//js/page/userCenter/amazeui.min.js"></script>
-    <script type="text/javascript" src="../..//js/page/userCenter/app.js"></script>
-    <script type="text/javascript" src="../..//js/page/userCenter/blockUI.js"></script>
+    <script type="text/javascript" src="../../js/page/userCenter/jquery-2.1.0.js"></script>
+    <script type="text/javascript" src="../../js/page/userCenter/amazeui.min.js"></script>
+    <script type="text/javascript" src="../../js/page/userCenter/app.js"></script>
+    <script type="text/javascript" src="../../js/page/userCenter/blockUI.js"></script>
 </body>
 
 </html>
