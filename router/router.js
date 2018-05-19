@@ -5,6 +5,8 @@ const appointmentController = require('../controller/api/appointment.js')
 
 module.exports = (app) => {
 
+
+// html pages
 router.get('/', async(ctx, next) => {
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
     let htmlFile = fs.readFileSync('public/html/index.html')
@@ -14,7 +16,6 @@ router.get('/', async(ctx, next) => {
     ctx.redirect('/login')
   }
 })
-
 
 router.get('/login', async(ctx, next) => {
 
@@ -29,7 +30,6 @@ router.get('/register', async(ctx, next) =>{
   ctx.response.body = htmlFile
 })
 
-
 router.get('/dog', async(ctx, next) =>{
   console.log('session id: ',ctx.session.userId)
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
@@ -41,6 +41,7 @@ router.get('/dog', async(ctx, next) =>{
   }
 })
 
+// services module
 router.get('/services', async(ctx, next) =>{
 
   if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
@@ -54,48 +55,26 @@ router.get('/services', async(ctx, next) =>{
 
 router.post('/services', appointmentController.create)
 
-
-router.get('/user/profile', async(ctx, next) =>{
-
-  if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/user_profile.html')
-    ctx.response.type = 'html'
-    ctx.response.body = htmlFile
-  }else{
-    ctx.redirect('/login')
-  }
-})
-
+// user profile
+router.get('/user/profile', userInfoController.showProile)
 router.post('/user/profile', userInfoController.editUserInfo)
-
 router.post('/user/register', userInfoController.signUp)
 router.post('/user/signin', userInfoController.signIn)
 router.get('/user/logout', userInfoController.logOut)
 
 
+// user appointment
+// router.get('/appointment/list', appointmentController.listByUser)
+// router demo
+// http://localhost:8080/user/appointment/detail?id=5afe7655cc3a4f6e0def45a1
+// router.get('/appointment/detail', appointmentController.getDetailById)
 
-// user center
-router.get('/userCenter/appointment/list', async(ctx, next) =>{
 
-  if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/userCenter/table_list.html')
-    ctx.response.type = 'html'
-    ctx.response.body = htmlFile
-  }else{
-    ctx.redirect('/login')
-  }
-})
+// admin module
+router.get('/appointment/list',  userInfoController.checkAdmin, appointmentController.listAll)
+router.get('/appointment/edit',  userInfoController.checkAdmin, appointmentController.editById)
+router.get('/appointment/delete',userInfoController.checkAdmin, appointmentController.deleteById)
 
-router.get('/userCenter/appointment/detail', async(ctx, next) =>{
-
-  if ( ctx.session && ctx.session.isLogin && ctx.session.userName ) {
-    let htmlFile = fs.readFileSync('public/html/userCenter/form.html')
-    ctx.response.type = 'html'
-    ctx.response.body = htmlFile
-  }else{
-    ctx.redirect('/login')
-  }
-})
 
 app.use(router.routes())
    .use(router.allowedMethods())

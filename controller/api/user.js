@@ -2,6 +2,7 @@
  * Created by linyuhua on 2017/5/17.
  */
 const User = require('../schemas/user');
+const _ = require('lodash');
 
 module.exports = {
     async signUp(ctx) {
@@ -65,13 +66,18 @@ module.exports = {
                     session.isLogin = true
                     session.userName = user.username
                     session.userId = user._id
-                    ctx.redirect('/')
+                    if (user.role != undefined && user.role > 5) {
+                        ctx.redirect('/appointment/list')
+                    } else {
+                        ctx.redirect('/')
+                    }
                 } else {
                     ctx.body = { success: false, message: '密码错误' }
                 }
             }
         })
     },
+
     async logOut(ctx) {
         let session = ctx.session
         session.isLogin = false
@@ -79,31 +85,98 @@ module.exports = {
         session.userId = ''
         ctx.redirect('/login')
     },
+
     async editUserInfo(ctx) {
 
+        if (ctx.session && ctx.session.isLogin && ctx.session.userName) {
+            let userId = ctx.session.userId
+            let user = await User.findOne({ _id: userId })
+            if (user == null || user == undefined || user == '') {
+                ctx.status = 500
+            } else {
+                _.merge(user, ctx.request.body)
+                user.save()
+                ctx.redirect('/')
+            }
 
-
-        let { firstname, lastname, email,
-              streetname, streetnumber, city, dogname, dogbreed,
-              dog_birth_date } = ctx.request.body
-
-        // console.log('session: ',ctx.session)
-
-        // console.log('firstname: ',firstname)
-        // console.log('lastname: ',lastname)
-        // console.log('email: ',email)
-        // console.log('streetname: ',streetname)
-        console.log('session: ',ctx.session)
-        if (ctx.session && ctx.session.isLogin && ctx.session.userName){
-           let userId = ctx.session.userId
-            let user = await User.findOne({_id:userId})
-            console.log('user : ',user)
-        }else{
-            ctx.redirect('/')
-            console.log('note: ',)
+        } else {
             ctx.redirect('/user/signin')
         }
+    },
 
+    // check current user is administrator or not
+    async checkAdmin(ctx, next) {
+        if (ctx.session && ctx.session.isLogin && ctx.session.userName) {
+            let userId = ctx.session.userId
+            let user = await User.findOne({ _id: userId })
 
+            if (user.role != undefined && user.role > 5) {
+                ctx.state = 'admin'
+            }
+            await next()
+        } else {
+            ctx.redirect('/login')
+        }
+    },
+
+    // creator administrator
+    async createAdmin(ctx) {
+        const { username, email, password } = ctx.request.body
+        // check user's session
+        if (ctx.session && ctx.session.isLogin && ctx.session.userName) {
+            let userId = ctx.session.userId
+            let user = await User.findOne({ _id: userId })
+            if (user.role != undefined && user.role > 5) {
+                console.log('current user is administrator')
+                // print infomation
+                if (!username && !password) {
+                    result.message = '请填写用户名和密码';
+                    ctx.body = result;
+                } else {
+                    let user = await User.findOne({ username });
+                    //检查用户名是否已存在
+                    if (!user) {
+                        const newUser = new User({
+                            username: username,
+                            password: password,
+                            email: email,
+                            role: 10
+                        });
+
+                        const doc = await newUser.save();
+                        if (!doc.errors) {
+                            ctx.redirect('/')
+                            // ctx.body = {success: true, message: '注册成功'}
+                        } else {
+                            ctx.body = result;
+                        }
+                    } else {
+                        ctx.body = { success: false, message: '用户名已存在' };
+                    }
+                }
+            } else {
+                console.log('not a administrator, forbidden: ')
+            }
+        } else {
+            ctx.redirect('/user/signin')
+        }
+    },
+
+    // show user's profile
+    async showProile(ctx) {
+
+        if (ctx.session && ctx.session.isLogin && ctx.session.userName) {
+            let userId = ctx.session.userId
+            let user = await User.findOne({ _id: userId })
+            if (user == null || user == undefined || user == '') {
+                ctx.status = 500
+            } else {
+
+                await ctx.render('user/user_profile', user)
+            }
+
+        } else {
+            ctx.redirect('/user/signin')
+        }
     }
 }

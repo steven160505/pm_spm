@@ -23,8 +23,13 @@
     "koa-router": "^7.4.0",
     "koa-session": "^5.8.1",
     "koa-static": "^4.0.2",
+    "loadsh": "^1.0.0",
     "log4js": "^2.4.1",
-    "mongoose": "^5.0.17"
+    "mongoose": "^5.0.17",
+    "nodemailer": "^4.6.4",
+    "nodemailer-smtp-transport": "^2.7.4",
+    "nodemon": "^1.17.4",
+    "nunjucks": "^3.1.2"
   },
   "devDependencies": {}
 }

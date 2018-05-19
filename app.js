@@ -11,6 +11,7 @@ const fs = require('fs')
 const router = require('./router/router')
 const mongoose = require('mongoose')
 const session=require('koa-session')
+const middleware = require('./middleware')
 
 const config = require('./config/config')
 
@@ -36,11 +37,9 @@ app.use(convert(koaStatic(
 // 设置nunjuncks
 app.use(koaNunjucks({
   ext: 'html',
-  path: path.join(__dirname, 'views'),
-  configureEnvironment: (env) => {
-    env.addFilter('shorten', (str, count) => {
-      return str.slice(0, count || 5);
-    });
+  path: path.join(__dirname, 'views'),// 指定视图目录
+  nunjucksConfig: {
+    trimBlocks: true // 开启转义 防Xss
   }
 }));
 
@@ -49,6 +48,7 @@ app.use(koaNunjucks({
 mongoose.Promise = global.Promise;
 mongoose.connect(config.database);
 
+middleware(app)
 router(app)
 
 app.listen(port, () => {

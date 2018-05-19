@@ -14,7 +14,6 @@ const Schema = mongoose.Schema
 const AppointmentSchema = new Schema({
     userid: {
         type: Schema.Types.ObjectId,
-        unique: true,
         require: true
     },
     address: {

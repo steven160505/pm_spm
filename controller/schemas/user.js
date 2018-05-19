@@ -16,6 +16,24 @@ const UserSchema = new Schema({
     lastname: {
         type: String,
     },
+    streetname:{
+        type: String,
+    },
+    streetnumber:{
+        type: String,
+    },
+    city:{
+        type: String,
+    },
+    dogname:{
+        type: String,
+    },
+    dogbreed:{
+        type: String,
+    },
+    dog_birth_date:{
+        type: String,
+    },
     homeAddress: {
         type: String,
     },
@@ -24,6 +42,10 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
+    },
+    role:{
+        type:Number,
+        default:1
     }
 });
 
