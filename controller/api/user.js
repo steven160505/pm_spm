@@ -1,6 +1,3 @@
-/**
- * Created by linyuhua on 2017/5/17.
- */
 const User = require('../schemas/user');
 const _ = require('lodash');
 

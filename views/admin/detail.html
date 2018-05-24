@@ -24,7 +24,7 @@
     <!-- Begin page -->
     <header class="am-topbar am-topbar-fixed-top">
         <div class="am-topbar-left am-hide-sm-only">
-            <a href="index.html" class="logo"><span>User<span>Center</span></span><i class="zmdi zmdi-layers"></i></a>
+            <a href="index.html" class="logo"><span>{{role}}<span>Center</span></span><i class="zmdi zmdi-layers"></i></a>
         </div>
         <div class="contain">
             <ul class="am-nav am-navbar-nav am-navbar-left">
@@ -41,7 +41,7 @@
                 <!-- User -->
                 <div class="user-box am-hide-sm-only">
                     <div class="user-img">
-                        <img src="/img/avatar-1.jpg" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
+                        <img src="/img/{{avatar}}" alt="user-img" title="Mat Helme" class="img-circle img-thumbnail img-responsive">
                         <div class="user-status offline"><i class="am-icon-dot-circle-o" aria-hidden="true"></i></div>
                     </div>
                     <h5><a href="#">Jack Ma</a> </h5>
@@ -86,56 +86,56 @@
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-text-1">Address</label>
-                                                <input value="{{address}}" class="am-u-md-9 form-control" id="doc-ipt-text-1" name="address" placeholder="edit email">
+                                                <input value="{{item.address}}" class="am-u-md-9 form-control" id="doc-ipt-text-1" name="address" placeholder="edit email">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Surburb</label>
-                                                <input value="{{surburb}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" name="surburb" placeholder="Enter your surburb">
+                                                <input value="{{item.surburb}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" name="surburb" placeholder="Enter your surburb">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">City</label>
-                                                <input value="{{city}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" name="city" placeholder="Enter your city">
+                                                <input value="{{item.city}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" name="city" placeholder="Enter your city">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Date</label>
-                                                <input value="{{date}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Select a date for service" name="date">
+                                                <input value="{{item.date}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Select a date for service" name="date">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Dog breed</label>
-                                                <input value="{{dogBreed}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Enter your dog breed " name="dogBreed">
+                                                <input value="{{item.dogBreed}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Enter your dog breed " name="dogBreed">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Grooming options</label>
-                                                <input value="{{groomingOption}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Choose grooming options" name="groomingOption">
+                                                <input value="{{item.groomingOption}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Choose grooming options" name="groomingOption">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Water supply</label>
-                                                <input value="{{water}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply water？Yes,or No." name="water">
+                                                <input value="{{item.water}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply water？Yes,or No." name="water">
                                             </div>
                                         </div>
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-1">Electricity supply</label>
-                                                <input value="{{electricity}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply electricity？Yes,or No." name="electricity">
+                                                <input value="{{item.electricity}}" class="am-u-md-9 form-control" id="doc-ipt-email-1" placeholder="Do you supply electricity？Yes,or No." name="electricity">
                                             </div>
                                         </div>
                                         
                                         <div class="am-form-group">
                                             <div class="am-g">
                                                 <label class="am-u-md-3 am-md-text-right am-padding-left-0" for="doc-ipt-email-10">Requirements</label>
-                                                <textarea class="am-u-md-9 form-control" rows="5" id="doc-ipt-email-10" name="requirements" >{{requirements}}</textarea>
+                                                <textarea class="am-u-md-9 form-control" rows="5" id="doc-ipt-email-10" name="requirements" >{{item.requirements}}</textarea>
                                             </div>
                                         </div>
                                         <button class="am-btn am-btn-danger pull-left">Cancel</button>
